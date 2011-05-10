@@ -55,7 +55,10 @@ namespace MasterMInd
         string[] remColor2 = new string[6];
         string[] remColor3 = new string[6];
         string[] remColor4 = new string[6];
+<<<<<<< HEAD
         string[] tempAnswers = new string[4];
+=======
+>>>>>>> origin/master
 
         public Form1()
         {
@@ -344,6 +347,10 @@ namespace MasterMInd
           //thus count_color is two 
         public void CheckAnswers()
         {
+<<<<<<< HEAD
+=======
+            string[] tempAnswers = new string[4];
+>>>>>>> origin/master
             int[] answersInfo = new int[4];
 
             for (int j = 0; j < 4; j++)
@@ -374,7 +381,11 @@ namespace MasterMInd
 
                 if (count_correct == 4)
                 {
+<<<<<<< HEAD
                     label1.Text = "The AI Found the Right Code!\nYou Lose!";
+=======
+                    label1.Text = "You Found the Right Code!\nYou Win!";
+>>>>>>> origin/master
                     radioButton1.Visible = false;
                     radioButton2.Visible = false;
                     radioButton3.Visible = false;
@@ -391,7 +402,11 @@ namespace MasterMInd
         }
 
 
+<<<<<<< HEAD
         public void CheckAnswers(int collumn, int row)
+=======
+        public void CheckAnswers(int collumn)
+>>>>>>> origin/master
         {
             if (state == GameState.AI)
             {
@@ -468,6 +483,7 @@ namespace MasterMInd
                 }
                 for (int i = 0; i < 4; i++)
                 {
+<<<<<<< HEAD
                     if (tempAnswers[i] == "C")
                     {
                         if (i == 3)
@@ -484,6 +500,16 @@ namespace MasterMInd
                             button1.Visible = false;
                         }
                     }
+=======
+                    label1.Text = "You Found the Right Code!\nYou Win!";
+                    radioButton1.Visible = false;
+                    radioButton2.Visible = false;
+                    radioButton3.Visible = false;
+                    radioButton4.Visible = false;
+                    radioButton5.Visible = false;
+                    radioButton6.Visible = false;
+                    button1.Visible = false;
+>>>>>>> origin/master
                 }
             }
         }
@@ -492,6 +518,10 @@ namespace MasterMInd
         {
             int rand = rng.Next(6);
             bool done = false;
+<<<<<<< HEAD
+=======
+            int h = 0;
+>>>>>>> origin/master
             for (int q = 0; q < 6; q++)
             {
                 if(guess[i] == notColor[q])
@@ -505,6 +535,107 @@ namespace MasterMInd
                     }
                 }
             }
+<<<<<<< HEAD
+=======
+
+            /*for (int q = 0; q < 6; q++)
+            { 
+                while(done == true)
+                {
+                if (guess[q] == notColor[q])
+                {
+                    switch (rand)
+                    {
+                        case 0:
+                            guess[q] = "Red";
+                            for(int j = 0; j < 6; j++)
+                            {
+                            if(guess[q] == notColor[q])
+                                {
+                                    done = true;
+                                }
+                            }
+                            break;
+                        case 1:
+                            guess[q] = "White";
+                            for (int j = 0; j < 6; j++)
+                            {
+                                if (guess[q] == notColor[q])
+                                {
+                                    done = true;
+                                }
+                            }
+                            break;
+                        case 2:
+                            guess[q] = "Black";
+                            for (int j = 0; j < 6; j++)
+                            {
+                                if (guess[q] == notColor[q])
+                                {
+                                    done = true;
+                                }
+                            }
+                            break;
+                        case 3:
+                            guess[q] = "Blue";
+                            for (int j = 0; j < 6; j++)
+                            {
+                                if (guess[q] == notColor[q])
+                                {
+                                    done = true;
+                                }
+                            }
+                            break;
+                        case 4:
+                            guess[q] = "Green";
+                            for (int j = 0; j < 6; j++)
+                            {
+                                if (guess[q] == notColor[q])
+                                {
+                                    done = true;
+                                }
+                            }
+                            break;
+                        case 5:
+                            guess[q] = "Yellow";
+                            for (int j = 0; j < 6; j++)
+                            {
+                                if (guess[q] == notColor[q])
+                                {
+                                    done = true;
+                                }
+                            }
+                            break;
+                    }
+                    }
+                }
+            }
+
+            switch (rand)
+            {
+                case 0:
+                    guess[i] = "Red";
+                    break;
+                case 1:
+                    guess[i] = "Green";
+                    break;
+                case 2:
+                    guess[i] = "Blue";
+                    break;
+                case 3:
+                    guess[i] = "Yellow";
+                    break;
+                case 4:
+                    guess[i] = "Black";
+                    break;
+                case 5:
+                    guess[i] = "White";
+                    break;
+                case 6:
+                    AIRand();
+                    break;
+            }*/
+>>>>>>> origin/master
         }
 
         public string AIRand(int i)

@@ -42,14 +42,22 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+<<<<<<< HEAD
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MasterMInd.exe" size="19456">
+=======
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MasterMInd.exe" size="18432">
+>>>>>>> origin/master
       <assemblyIdentity name="MasterMInd" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+<<<<<<< HEAD
         <dsig:DigestValue>Ts4URhVTIdj7ECMkf5Bp0EhN8C8=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>7W18K2+5LsCLocAl1Z0EzHyItes=</dsig:DigestValue>
+>>>>>>> origin/master
       </hash>
     </dependentAssembly>
   </dependency>
