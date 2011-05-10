@@ -1,16 +1,3 @@
-c:\users\ajman\documents\visual studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\ResolveAssemblyReference.cache
-c:\users\ajman\documents\visual studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.Form1.resources
-c:\users\ajman\documents\visual studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.Properties.Resources.resources
-c:\users\ajman\documents\visual studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\GenerateResource.read.1.tlog
-c:\users\ajman\documents\visual studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\GenerateResource.write.1.tlog
-c:\users\ajman\documents\visual studio 2010\Projects\MasterMInd\MasterMInd\bin\Debug\MasterMInd.exe
-c:\users\ajman\documents\visual studio 2010\Projects\MasterMInd\MasterMInd\bin\Debug\MasterMInd.pdb
-c:\users\ajman\documents\visual studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.exe
-c:\users\ajman\documents\visual studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.pdb
-C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\bin\Debug\MasterMInd.exe.manifest
-C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\bin\Debug\MasterMInd.application
-C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.exe.manifest
-C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.application
 P:\ajman1101-MasterMindAI-cff34d1\ajman1101-MasterMindAI-cff34d1\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.exe
 P:\ajman1101-MasterMindAI-cff34d1\ajman1101-MasterMindAI-cff34d1\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.pdb
 P:\ajman1101-MasterMindAI-cff34d1\ajman1101-MasterMindAI-cff34d1\MasterMInd\MasterMInd\bin\Debug\MasterMInd.exe.manifest
@@ -24,3 +11,16 @@ P:\ajman1101-MasterMindAI-cff34d1\ajman1101-MasterMindAI-cff34d1\MasterMInd\Mast
 P:\ajman1101-MasterMindAI-cff34d1\ajman1101-MasterMindAI-cff34d1\MasterMInd\MasterMInd\obj\x86\Debug\GenerateResource.write.1.tlog
 P:\ajman1101-MasterMindAI-cff34d1\ajman1101-MasterMindAI-cff34d1\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.exe.manifest
 P:\ajman1101-MasterMindAI-cff34d1\ajman1101-MasterMindAI-cff34d1\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.application
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\bin\Debug\MasterMInd.exe.manifest
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\bin\Debug\MasterMInd.application
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\bin\Debug\MasterMInd.exe
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\bin\Debug\MasterMInd.pdb
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.Form1.resources
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.Properties.Resources.resources
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.exe.manifest
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.application
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.exe
+C:\Users\AJMan\Documents\Visual Studio 2010\Projects\MasterMInd\MasterMInd\obj\x86\Debug\MasterMInd.pdb
