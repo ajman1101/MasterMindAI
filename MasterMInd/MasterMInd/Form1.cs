@@ -33,6 +33,7 @@ namespace MasterMInd
         public string  []guess = new string[4];
         PictureBox[,] shit = new PictureBox[12, 4];
         PictureBox[] things = new PictureBox[4];
+        Label[] infoLabels = new Label[12];
         Random rng = new Random();
         const int NUM_SPOTS = 4;
         const int NUM_CLRS = 5;
@@ -54,6 +55,7 @@ namespace MasterMInd
         string[] remColor2 = new string[6];
         string[] remColor3 = new string[6];
         string[] remColor4 = new string[6];
+        string[] tempAnswers = new string[4];
 
         public Form1()
         {
@@ -102,11 +104,11 @@ namespace MasterMInd
                         MakePegs();
                         i++;
                     }
-                    if (i == 5)
+                    if (i == 5 || i ==6)
                     {
                         i++;
                     }
-                    if (i == 6)
+                    if (i == 7)
                     {
                         ChangePeg();
                     }
@@ -233,6 +235,15 @@ namespace MasterMInd
                     shit[h, j] = box;
                     collection[1] = box;
                     Controls.AddRange(collection);
+                    if (j == 3)
+                    {
+                        Label info = new Label();
+                        Point infoSpot= new Point(box.Location.X +20, box.Location.Y);
+                        info.Location = infoSpot;
+                        infoLabels[h] = info;
+                        collection[0]= info;
+                        Controls.AddRange(collection);
+                    }
                 }
             }
         }
@@ -291,34 +302,34 @@ namespace MasterMInd
         //makes the answer colors
         private void MakeAnswers()
           {
-            for (int i = 1; i < NUM_SPOTS; i++)
+            for (int i = 0; i < NUM_SPOTS; i++)
             {
                 int num = rng.Next(NUM_CLRS);
                 switch (num)
                 {
                     case 0:
                         clr = "Red";
-                        answers[i - 1] = clr;
+                        answers[i] = clr;
                         break;
                     case 1:
                         clr = "Blue";
-                        answers[i - 1] = clr;
+                        answers[i] = clr;
                         break;
                     case 2:
                         clr = "Yellow";
-                        answers[i - 1] = clr;
+                        answers[i] = clr;
                         break;
                     case 3:
                         clr = "Green";
-                        answers[i - 1] = clr;
+                        answers[i] = clr;
                         break;
                 case 4:
                         clr = "White";
-                        answers[i - 1] = clr;
+                        answers[i] = clr;
                         break;
                 case 5:
                         clr = "Black";
-                        answers[i - 1] = clr;
+                        answers[i] = clr;
                         break;
                 default:
                         break;
@@ -333,7 +344,6 @@ namespace MasterMInd
           //thus count_color is two 
         public void CheckAnswers()
         {
-            string[] tempAnswers = new string[4];
             int[] answersInfo = new int[4];
 
             for (int j = 0; j < 4; j++)
@@ -364,7 +374,7 @@ namespace MasterMInd
 
                 if (count_correct == 4)
                 {
-                    label1.Text = "You Found the Right Code!\nYou Win!";
+                    label1.Text = "The AI Found the Right Code!\nYou Lose!";
                     radioButton1.Visible = false;
                     radioButton2.Visible = false;
                     radioButton3.Visible = false;
@@ -381,7 +391,7 @@ namespace MasterMInd
         }
 
 
-        public void CheckAnswers(int collumn)
+        public void CheckAnswers(int collumn, int row)
         {
             if (state == GameState.AI)
             {
@@ -429,11 +439,11 @@ namespace MasterMInd
             }
             else
             {
-                string[] tempAnswers = new string[3];
+                count_color = 0;
 
                 if (answers[collumn] == choice)
                 {
-                    count_correct++;
+                    tempAnswers[collumn] = "C";
                 }
                 else
                 {
@@ -441,25 +451,39 @@ namespace MasterMInd
                     {
                         if (answers[i] == choice)
                         {
-                            count_color++;
+                            tempAnswers[collumn] = "WS";
+                        }
+                        else
+                        {
+                            tempAnswers[collumn] = "W";
                         }
                     }
                 }
 
                 if (collumn == 3)
                 {
-                    label1.Text = "Correct Spot and Color: " + count_correct + "\nCorrect Color But Not Spot: " + count_color;
+                    infoLabels[row].Width = 1000;
+                    infoLabels[row].Text = "Spots: 1 " + tempAnswers[0] + " 2: " + tempAnswers[1] + " 3: " + tempAnswers[2] + " 4: " + tempAnswers[3];
+                    infoLabels[row].Visible = true;
                 }
-                if (count_correct == 4)
+                for (int i = 0; i < 4; i++)
                 {
-                    label1.Text = "You Found the Right Code!\nYou Win!";
-                    radioButton1.Visible = false;
-                    radioButton2.Visible = false;
-                    radioButton3.Visible = false;
-                    radioButton4.Visible = false;
-                    radioButton5.Visible = false;
-                    radioButton6.Visible = false;
-                    button1.Visible = false;
+                    if (tempAnswers[i] == "C")
+                    {
+                        if (i == 3)
+                        {
+                            label1.Text = "You Found the Right Code!\nYou Win!";
+                            Point spot = new Point(160, 10);
+                            label1.Location = spot;
+                            radioButton1.Visible = false;
+                            radioButton2.Visible = false;
+                            radioButton3.Visible = false;
+                            radioButton4.Visible = false;
+                            radioButton5.Visible = false;
+                            radioButton6.Visible = false;
+                            button1.Visible = false;
+                        }
+                    }
                 }
             }
         }
@@ -468,7 +492,6 @@ namespace MasterMInd
         {
             int rand = rng.Next(6);
             bool done = false;
-            int h = 0;
             for (int q = 0; q < 6; q++)
             {
                 if(guess[i] == notColor[q])
@@ -482,104 +505,6 @@ namespace MasterMInd
                     }
                 }
             }
-
-            /*for (int q = 0; q < 6; q++)
-            { 
-                while(done == true)
-                {
-                if (guess[q] == notColor[q])
-                {
-                    switch (rand)
-                    {
-                        case 0:
-                            guess[q] = "Red";
-                            for(int j = 0; j < 6; j++)
-                            {
-                            if(guess[q] == notColor[q])
-                                {
-                                    done = true;
-                                }
-                            }
-                            break;
-                        case 1:
-                            guess[q] = "White";
-                            for (int j = 0; j < 6; j++)
-                            {
-                                if (guess[q] == notColor[q])
-                                {
-                                    done = true;
-                                }
-                            }
-                            break;
-                        case 2:
-                            guess[q] = "Black";
-                            for (int j = 0; j < 6; j++)
-                            {
-                                if (guess[q] == notColor[q])
-                                {
-                                    done = true;
-                                }
-                            }
-                            break;
-                        case 3:
-                            guess[q] = "Blue";
-                            for (int j = 0; j < 6; j++)
-                            {
-                                if (guess[q] == notColor[q])
-                                {
-                                    done = true;
-                                }
-                            }
-                            break;
-                        case 4:
-                            guess[q] = "Green";
-                            for (int j = 0; j < 6; j++)
-                            {
-                                if (guess[q] == notColor[q])
-                                {
-                                    done = true;
-                                }
-                            }
-                            break;
-                        case 5:
-                            guess[q] = "Yellow";
-                            for (int j = 0; j < 6; j++)
-                            {
-                                if (guess[q] == notColor[q])
-                                {
-                                    done = true;
-                                }
-                            }
-                            break;
-                    }
-                    }
-                }
-            }
-
-            switch (rand)
-            {
-                case 0:
-                    guess[i] = "Red";
-                    break;
-                case 1:
-                    guess[i] = "Green";
-                    break;
-                case 2:
-                    guess[i] = "Blue";
-                    break;
-                case 3:
-                    guess[i] = "Yellow";
-                    break;
-                case 4:
-                    guess[i] = "Black";
-                    break;
-                case 5:
-                    guess[i] = "White";
-                    break;
-                case 6:
-                    AIRand();
-                    break;
-            }*/
         }
 
         public string AIRand(int i)
@@ -673,6 +598,44 @@ namespace MasterMInd
                           box.BackColor = Color.Black;
                           break;
                   }
+                  int x = 0;
+                  int y = 400;
+                  //make answers apper here
+                  for (int i = 0; i < 4; i++)
+                  {
+                      x += 30;
+                      PictureBox answerBox = new PictureBox();
+                      answerBox.Height = 10;
+                      answerBox.Width = 10;
+                      Point area = new Point(x, y);
+                      answerBox.Location = area;
+                      switch (answers[i])
+                      {
+                          case "Red":
+                              answerBox.BackColor = Color.Red;
+                              break;
+                          case "Blue":
+                              answerBox.BackColor = Color.Blue;
+                              break;
+                          case "Yellow":
+                              answerBox.BackColor = Color.Yellow;
+                              break;
+                          case "Green":
+                              answerBox.BackColor = Color.ForestGreen;
+                              break;
+                          case "White":
+                              answerBox.BackColor = Color.WhiteSmoke;
+                              break;
+                          case "Black":
+                              answerBox.BackColor = Color.Black;
+                              break;
+                      }
+                      Controls.Add(answerBox);
+                  }
+                  label1.Visible = true;
+                  label1.Text = "Here are the correct answers!";
+                  Point spot = new Point(10, 430);
+                  label1.Location = spot;
               }
               else
               {
@@ -686,13 +649,14 @@ namespace MasterMInd
                   r++;
                   count_color = 0;
                   count_correct = 0;
+                  label1.Visible = false;
               }
 
               //get picture box to picture box in array at [row, collumn]
               box = shit[r, c];
 
               //use check answers method with current collumn
-              CheckAnswers(c);
+              CheckAnswers(c, r);
 
               //add one to collumn after getting answer
               c++;
