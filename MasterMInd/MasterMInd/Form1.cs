@@ -141,6 +141,7 @@ namespace MasterMInd
                             radioButton6.Visible = false;
                             button1.Visible = false;
                             button3.Visible = false;
+                            button4.Visible = false;
                         }
                         MakeAIPegs();
                         AI();
@@ -158,6 +159,7 @@ namespace MasterMInd
             radioButton6.Visible = false;
             button1.Visible = false;
             button3.Visible = false;
+            button4.Visible = false;
         }
 
         private void MakeAIPegs()
@@ -208,8 +210,15 @@ namespace MasterMInd
 
         private void MakePegs()
         {
+            Label legend = new Label();
+            legend.Text="W=Wrong, WS=Wrong Spot, C=Correct Color";
+            Point here = new Point(10, 10);
+            legend.Location = here;
+            legend.Visible = true;
+            legend.Width = 1000;
             button1.Visible = true;
             button3.Visible = true;
+            button4.Visible = true;
             radioButton1.Visible = true;
             radioButton2.Visible = true;
             radioButton3.Visible = true;
@@ -217,7 +226,9 @@ namespace MasterMInd
             radioButton5.Visible = true;
             radioButton6.Visible = true;
             boxY = 10;
-            Control [] collection = new Control[2];
+            Control [] collection = new Control[3];
+            collection[2] = legend;
+            Controls.AddRange(collection);
             for (int h = 0; h < 12; h++)
             {
                 boxY += 30;
@@ -271,6 +282,7 @@ namespace MasterMInd
             radioButton6.Visible = true;
             button1.Visible = true;
             button3.Visible = true;
+            button4.Visible = true;
                 boxY += 30;
                 boxX = 0;
                 int l =0;
@@ -387,6 +399,7 @@ namespace MasterMInd
                     radioButton6.Visible = false;
                     button1.Visible = false;
                     button3.Visible = false;
+                    button4.Visible = false;
                 }
                 else
                 {
@@ -471,6 +484,7 @@ namespace MasterMInd
                             radioButton6.Visible = false;
                             button1.Visible = false;
                             button3.Visible = false;
+                            button4.Visible = false;
                             label1.Visible = true;
                     }
             }
@@ -858,6 +872,48 @@ namespace MasterMInd
             {
                 k -= 1;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int x = 0;
+            int y = 400;
+            //make answers apper here
+            for (int i = 0; i < 4; i++)
+            {
+                x += 30;
+                PictureBox answerBox = new PictureBox();
+                answerBox.Height = 10;
+                answerBox.Width = 10;
+                Point area = new Point(x, y);
+                answerBox.Location = area;
+                switch (answers[i])
+                {
+                    case "Red":
+                        answerBox.BackColor = Color.Red;
+                        break;
+                    case "Blue":
+                        answerBox.BackColor = Color.Blue;
+                        break;
+                    case "Yellow":
+                        answerBox.BackColor = Color.Yellow;
+                        break;
+                    case "Green":
+                        answerBox.BackColor = Color.ForestGreen;
+                        break;
+                    case "White":
+                        answerBox.BackColor = Color.WhiteSmoke;
+                        break;
+                    case "Black":
+                        answerBox.BackColor = Color.Black;
+                        break;
+                }
+                Controls.Add(answerBox);
+            }
+            label1.Visible = true;
+            label1.Text = "Here are the correct answers!";
+            Point spot = new Point(10, 430);
+            label1.Location = spot;
         }
     }
 }
