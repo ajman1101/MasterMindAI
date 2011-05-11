@@ -454,12 +454,12 @@ namespace MasterMInd
                             tempAnswers[collumn] = "wS";
                             count_color++;
                         }
+                        if (i == 3)
+                        {
+                            tempAnswers[collumn] = "W";
+                        }
                     }
                 }
-                 else
-                 {
-                tempAnswers[collumn] = "W";
-                 }
 
                 if (collumn == 3)
                 {
