@@ -451,12 +451,12 @@ namespace MasterMInd
                     {
                         if (answers[i] == choice)
                         {
-                            tempAnswers[collumn] = "WS";
+                            tempAnswers[i] = "WS";
                             count_color++;
                         }
                         else
                         {
-                            tempAnswers[collumn] = "W";
+                            tempAnswers[i] = "W";
                         }
                     }
                 }
@@ -474,7 +474,7 @@ namespace MasterMInd
                     if (tempAnswers[0] == "C" && tempAnswers[1] == "C" && tempAnswers[2] == "C" && tempAnswers[3] == "C" && count_correct ==4)
                     {
                             label1.Text = "You Found the Right Code!\nYou Win!";
-                            Point spot = new Point(160, 10);
+                            Point spot = new Point(205, 10);
                             label1.Location = spot;
                             radioButton1.Visible = false;
                             radioButton2.Visible = false;
