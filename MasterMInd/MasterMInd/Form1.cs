@@ -51,10 +51,10 @@ namespace MasterMInd
         GameState state = new GameState();
         int i = 0;
         int[] answersInfo = new int[4];
-        string[] remColor1 = new string[6];
-        string[] remColor2 = new string[6];
-        string[] remColor3 = new string[6];
-        string[] remColor4 = new string[6];
+        string[] remColor1 = new string[5];
+        string[] remColor2 = new string[5];
+        string[] remColor3 = new string[5];
+        string[] remColor4 = new string[5];
         string[] tempAnswers = new string[4];
 
         public Form1()
@@ -374,16 +374,16 @@ namespace MasterMInd
                     switch (j)
                     {
                         case 0:
-                            remColor1 [j]= guess[j];
+                            remColor1 [Array.IndexOf(remColor1, null)]= guess[j];
                             break;
                         case 1:
-                            remColor2[j] = guess[j];
+                            remColor2[Array.IndexOf(remColor2, null)] = guess[j];
                             break;
                         case 2:
-                            remColor3[j] = guess[j];
+                            remColor3[Array.IndexOf(remColor3, null)] = guess[j];
                             break;
                         case 3:
-                            remColor4[j] = guess[j];
+                            remColor4[Array.IndexOf(remColor4, null)] = guess[j];
                             break;
                     }
                 }
@@ -445,21 +445,21 @@ namespace MasterMInd
                     tempAnswers[collumn] = "C";
                     count_correct++;
                 }
-                else
+                if (tempAnswers[collumn] == null)
                 {
                     for (int i = 0; i < answers.Length; i++)
                     {
                         if (answers[i] == choice)
                         {
-                            tempAnswers[i] = "WS";
+                            tempAnswers[collumn] = "wS";
                             count_color++;
-                        }
-                        else
-                        {
-                            tempAnswers[i] = "W";
                         }
                     }
                 }
+                 else
+                 {
+                tempAnswers[collumn] = "W";
+                 }
 
                 if (collumn == 3)
                 {
@@ -492,17 +492,30 @@ namespace MasterMInd
 
         public void AIRand(string [] notColor, int i)
         {
+            bool colorRepeat = new bool();
+            colorRepeat = false;
             int rand = rng.Next(6);
-            for (int q = 0; q < 6; q++)
+            while (colorRepeat == false)
             {
-                if(guess[i] == notColor[q])
+                for (int q = 0; q < 5; q++)
                 {
-                        while(AIRand(i) == notColor[q])
-                        {
-                        }
+                    if (guess[i] == notColor[q])
+                    {
+                        colorRepeat = true;
+                        break;
+                    }
+                }
+                if (colorRepeat == true)
+                {
+                    AIRand(i);
+                    colorRepeat = false;
+                }
+                else
+                {
+                    colorRepeat = true;
                 }
             }
-        }
+            }
 
         public string AIRand(int i)
         {
