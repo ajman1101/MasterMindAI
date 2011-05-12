@@ -288,7 +288,7 @@ namespace MasterMInd
                 int l =0;
                 if (state == GameState.AI)
                 {
-                    label1.Text = "Input your Guess \nThe AI will then Guess";
+                    label1.Text = "Input your Answer \nThe AI will then Guess";
                 }
                 else if (state == GameState.Double)
                 {
@@ -453,10 +453,12 @@ namespace MasterMInd
                         {
                             tempAnswers[collumn] = "wS";
                             count_color++;
+                            break;
                         }
                         if (i == 3)
                         {
                             tempAnswers[collumn] = "W";
+                            break;
                         }
                     }
                 }
